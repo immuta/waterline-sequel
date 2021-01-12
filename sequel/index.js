@@ -2,7 +2,7 @@
  * Module dependencies
  */
 
-var _ = require('lodash');
+var _ = require('@sailshq/lodash');
 
 var SelectBuilder = require('./select');
 var WhereBuilder = require('./where');

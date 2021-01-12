@@ -2,7 +2,7 @@
  * Helper functions
  */
 
-var _ = require('lodash');
+var _ = require('@sailshq/lodash');
 
 // Module Exports
 
@@ -177,5 +177,5 @@ utils.escapeString = function(value, forLike) {
  */
 
 utils.toSqlDate = function(date) {
-  return date.toUTCString();
+  return date.toISOString();
 };

@@ -10,7 +10,7 @@
     "url": "git://github.com/balderdashy/waterline-sequel.git"
   },
   "dependencies": {
-    "lodash": "3.10.1"
+    "@sailshq/lodash": "3.10.4"
   },
   "devDependencies": {
     "async": "2.0.1",

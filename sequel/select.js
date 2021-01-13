@@ -2,7 +2,7 @@
  * Module dependencies
  */
 
-var _ = require('lodash');
+var _ = require('@sailshq/lodash');
 var utils = require('./lib/utils');
 var hop = utils.object.hasOwnProperty;
 

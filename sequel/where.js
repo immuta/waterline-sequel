@@ -2,7 +2,7 @@
  * Module dependecies
  */
 
-var _ = require('lodash');
+var _ = require('@sailshq/lodash');
 var CriteriaParser = require('./lib/criteriaProcessor');
 var utils = require('./lib/utils');
 var hop = utils.object.hasOwnProperty;

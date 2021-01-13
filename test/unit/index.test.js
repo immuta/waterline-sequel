@@ -2,7 +2,7 @@ var assert  = require('chai').assert,
     Sequel  = require('../../sequel'),
     schema  = require('../schema'),
     options = require('../options'),
-    _       = require('lodash'),
+    _ = require('@sailshq/lodash'),
     queries = require('../queries');
     schemaQueries = require('../schemaQueries');
 

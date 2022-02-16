@@ -757,6 +757,9 @@ CriteriaProcessor.prototype.prepareCriterion = function prepareCriterion(key, va
         str = comparator + ' "' + utils.escapeString(value) + '"';
       }
 
+      // TODO: Figure out if need special behavior for parameterized stuff
+      str = self.addLikeSuffix(str);
+
       break;
 
     case 'contains':
@@ -780,6 +783,8 @@ CriteriaProcessor.prototype.prepareCriterion = function prepareCriterion(key, va
       else {
         str = comparator + ' "%' + utils.escapeString(value, true) + '%"';
       }
+
+      str = self.addLikeSuffix(str);
 
       break;
 
@@ -805,6 +810,8 @@ CriteriaProcessor.prototype.prepareCriterion = function prepareCriterion(key, va
         str = comparator + ' "' + utils.escapeString(value, true) + '%"';
       }
 
+      str = self.addLikeSuffix(str);
+
       break;
 
     case 'endsWith':
@@ -828,6 +835,8 @@ CriteriaProcessor.prototype.prepareCriterion = function prepareCriterion(key, va
       else {
         str = comparator + ' "%' + utils.escapeString(value, true) + '"';
       }
+
+      str = self.addLikeSuffix(str);
 
       break;
 
@@ -912,4 +921,12 @@ CriteriaProcessor.prototype.group = function(options) {
 
   // Remove trailing comma
   this.queryString = this.queryString.slice(0, -2);
+};
+
+/**
+ * If configured, add suffix to the given LIKE string.
+ */
+CriteriaProcessor.prototype.addLikeSuffix = function (likeStr) {
+  const suffix = this.options?.likeClauseSuffix;
+  return suffix ? `${likeStr} ${suffix}`: likeStr;
 };
